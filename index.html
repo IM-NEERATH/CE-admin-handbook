@@ -137,6 +137,15 @@
       font-size: 23px;
       margin-bottom: 14px;
     }
+   
+    .card-icon {
+      margin-bottom: 0;
+      flex-shrink: 0;
+    }
+
+    .card h3 {
+      margin: 0;
+    }
 
     .card h3 {
       color: #123b70;
@@ -158,6 +167,13 @@
       background: #edf6ff;
       padding: 4px 9px;
       border-radius: 20px;
+    }
+
+    .card-heading {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
     }
 
     .empty {
@@ -237,22 +253,29 @@
 
     <section class="grid" id="menu">
 
-      <article class="card">
-        <div class="card-icon">📋</div> 
+    <article class="card">
+        <div class="card-heading">
+        <div class="card-icon">📋</div>
         <h3>Knowledge Admin CE</h3>
+        </div>
         <p>ความรู้พื้นฐานเบื้องต้น เกี่ยวกับเนื้อหางานของ Admin CE</p>
         <span class="status">ความรู้พื้นฐาน</span>
       </article>
       
       <article class="card">
+        <div class="card-heading">
         <div class="card-icon">📋</div>
         <h3>Work Process</h3>
+        </div>
         <p>ขั้นตอนรับงาน ประสานงานลูกค้า และติดตามงานบริการ</p>
         <span class="status">ขั้นตอนการทำงาน</span>
       </article>
       
       <article class="card">
-        <div class="card-icon">💬</div> <h3>FAQ & Templates</h3>
+        <div class="card-heading">
+        <div class="card-icon">💬</div> 
+        <h3>FAQ & Templates</h3>
+        </div>
         <p>คำถามที่พบบ่อยและตัวอย่างข้อความหรือเอกสาร</p>
         <span class="status">คำถามและแบบฟอร์ม</span>
       </article>
