@@ -209,8 +209,24 @@
     .back-button:hover {
        background: #ffffff35;
       }
-    
-  main {
+    .back-button {
+      display: inline-block;
+      background: #123b70;
+      border: 1px solid #123b70;
+      border-radius: 30px;
+      padding: 7px 14px;
+      color: white;
+      font-size: 13px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 18px;
+}
+
+      .back-button:hover {
+      background: #2479bb;
+}
+ 
+    main {
     flex: 1;
     }  
     footer {
@@ -290,7 +306,7 @@
         <span class="status">ความรู้พื้นฐาน</span>
       </article>
       
-      <article class="card" onclick="openKnowledge('Work Process')">
+      <article class="card"
         <div class="card-heading">
         <div class="card-icon">📋</div>
         <h3>Work Process</h3>
@@ -299,7 +315,7 @@
         <span class="status">ขั้นตอนการทำงาน</span>
       </article>
       
-      <article class="card" onclick="openKnowledge('FAQ & Templates')">
+      <article class="card"
         <div class="card-heading">
         <div class="card-icon">💬</div> 
         <h3>FAQ & Templates</h3>
@@ -366,14 +382,22 @@
 
       empty.style.display = visible === 0 ? "block" : "none";
     });
+    
     function openKnowledge(id) {
+  const page = document.getElementById(id);
+
+  if (!page) {
+    alert("ยังไม่มีหน้าสำหรับเมนูนี้");
+    return;
+  }
+
   document.getElementById("menu").style.display = "none";
   document.getElementById("search").style.display = "none";
   document.querySelector(".section-heading").style.display = "none";
   document.querySelector(".hero").style.display = "none";
   document.getElementById("empty").style.display = "none";
 
-  document.getElementById(id).style.display = "block";
+  page.style.display = "block";
 }
     function closeKnowledge() {
   document.getElementById("knowledge-admin").style.display = "none";
