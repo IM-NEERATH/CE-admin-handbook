@@ -313,7 +313,7 @@
         <span class="status">ความรู้พื้นฐาน</span>
       </article>
       
-      <article class="card"
+      <article class="card">
         <div class="card-heading">
         <div class="card-icon">📋</div>
         <h3>Work Process</h3>
@@ -322,7 +322,7 @@
         <span class="status">ขั้นตอนการทำงาน</span>
       </article>
       
-      <article class="card"
+      <article class="card">
         <div class="card-heading">
         <div class="card-icon">💬</div> 
         <h3>FAQ & Templates</h3>
@@ -391,39 +391,51 @@
     });
     
     function openKnowledge(id) {
-  const page = document.getElementById(id);
+      const page = document.getElementById(id);
 
-  if (!page) {
-    alert("ยังไม่มีหน้าสำหรับเมนูนี้");
-    return;
-  }
+      if (!page) {
+      alert("ยังไม่มีหน้าสำหรับเมนูนี้");
+      return;
+      }
 
-  document.getElementById("menu").style.display = "none";
-  document.getElementById("search").style.display = "none";
-  document.querySelector(".section-heading").style.display = "none";
-  document.querySelector(".hero").style.display = "none";
-  document.getElementById("empty").style.display = "none";
+      // ซ่อนหน้าแรกทั้งหน้า เพื่อไม่ให้กินพื้นที่
+      document.querySelector("main").style.display = "none";
 
-  page.style.display = "block";
-}
+      // ซ่อนหน้าความรู้และหน้า KPI ก่อน
+      document.getElementById("knowledge-admin").style.display = "none";
+      document.getElementById("kpi-page").style.display = "none";
+
+      // แสดงหน้าที่เลือก
+      page.style.display = "block";
+
+      // เลื่อนกลับไปด้านบนของหน้า
+      window.scrollTo(0, 0);
+    }
+   
     function closeKnowledge() {
-  document.getElementById("knowledge-admin").style.display = "none";
-  document.getElementById("kpi-page").style.display = "none";
-  document.getElementById("menu").style.display = "grid";
-  document.getElementById("search").style.display = "block";
-  document.querySelector(".section-heading").style.display = "flex";
-  document.querySelector(".hero").style.display = "block";
-}
+      document.getElementById("knowledge-admin").style.display = "none";
+      document.getElementById("kpi-page").style.display = "none";
+
+      // แสดงหน้าแรกกลับมา
+      document.querySelector("main").style.display = "block";
+
+      window.scrollTo(0, 0);
+    }
 
     function openKPI() {
-  document.getElementById("knowledge-admin").style.display = "none";
-  document.getElementById("kpi-page").style.display = "block";
-}
+      document.getElementById("knowledge-admin").style.display = "none";
+      document.getElementById("kpi-page").style.display = "block";
+
+      window.scrollTo(0, 0);
+    }
+
     function backToKnowledge() {
-  document.getElementById("kpi-page").style.display = "none";
-  document.getElementById("knowledge-admin").style.display = "block";
-}
-  </script>  
+      document.getElementById("kpi-page").style.display = "none";
+      document.getElementById("knowledge-admin").style.display = "block";
+
+      window.scrollTo(0, 0);
+    }
+    </script>  
 
 <footer>
   CE Admin Knowledge · Version 1.0 · EDS CONTROL TOWER
