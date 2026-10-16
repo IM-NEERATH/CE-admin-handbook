@@ -184,6 +184,31 @@
       text-align: center;
       color: #64748b;
     }
+    
+    <section id="knowledge-admin" class="container" style="display:none;">
+      <button onclick="closeKnowledge()">← กลับหน้าหลัก</button>
+
+      <h2>Knowledge Admin CE</h2>
+      <p>เลือกหัวข้อความรู้ที่ต้องการศึกษา</p>
+
+      <div class="grid">
+      <article class="card" onclick="openKPI()">
+      <div class="card-heading">
+      <div class="card-icon">📊</div>
+      <h3>KPI</h3>
+      </div>
+      <p>คู่มือและข้อมูลตัวชี้วัดผลงาน</p>
+      <span class="status">ตัวชี้วัดผลงาน</span>
+      </article>
+      </div>
+      </section>
+
+      <section id="kpi-page" class="container" style="display:none;">
+      <button onclick="backToKnowledge()">← กลับไป Knowledge Admin CE</button>
+
+      <h2>KPI</h2>
+      <p>เนื้อหาเกี่ยวกับ KPI สำหรับ Admin CE</p>
+      </section>
 
     footer {
       margin-top: 36px;
