@@ -11,13 +11,20 @@
       box-sizing: border-box;
     }
 
-    body {
+    html {
+      min-height: 100%;
+      }
+
+  body {
       margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
       font-family: Arial, "Noto Sans Thai", sans-serif;
       background: #f4f7fc;
       color: #24334d;
       line-height: 1.6;
-    }
+      }
 
     .topbar {
       background: #123b70;
@@ -184,7 +191,28 @@
       text-align: center;
       color: #64748b;
     }
-
+    
+    .back-button {
+      display: inline-block;
+      background: #ffffff20;
+      border: 1px solid #ffffff70;
+      border-radius: 30px;
+      padding: 7px 14px;
+      color: white;
+      font-size: 13px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 18px;
+      transition: background 0.2s;
+      }
+    
+    .back-button:hover {
+       background: #ffffff35;
+      }
+    
+  main {
+    flex: 1;
+    }  
     footer {
       margin-top: 36px;
       background: #e9eff7;
@@ -289,7 +317,9 @@
   </main>
   
       <section id="knowledge-admin" class="container" style="display:none;">
-      <button onclick="closeKnowledge()">Back to Menu</button>
+      <button class="back-button" onclick="closeKnowledge()">
+      ← BACK TO MENU
+      </button>
 
       <h2>Knowledge Admin CE</h2>
       <p>เลือกหัวข้อความรู้ที่ต้องการค้นหา</p>
@@ -307,7 +337,9 @@
       </section>
 
       <section id="kpi-page" class="container" style="display:none;">
-      <button onclick="backToKnowledge()">←Back to Knowledge Admin CE</button>
+      <button class="back-button" onclick="backToKnowledge()">
+      ← BACK TO MENU
+      </button>
 
       <h2>KPI</h2>
       <p>เนื้อหาเกี่ยวกับ KPI สำหรับ Admin CE</p>
@@ -363,8 +395,8 @@
   </script>  
 
 <footer>
-    CE Admin Knowledge · Version 1.0 · EDS CONTROL TOWER
-  </footer>
+  CE Admin Knowledge · Version 1.0 · EDS CONTROL TOWER
+</footer>
 
 </body>
 </html>
