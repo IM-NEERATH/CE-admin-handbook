@@ -233,11 +233,16 @@
       background: #2479bb;
 }
  
-    main {
+    #knowledge-admin,
+    #kpi-page,
+    #sop-page {
     flex: 1;
-    }  
+    }
+  
     footer {
-      margin-top: 36px;
+      margin-top: 0;
+      margin-top: auto;
+      width: 100%;
       background: #e9eff7;
       color: #64748b;
       text-align: center;
@@ -356,8 +361,7 @@
       <p>คู่มือและข้อมูลตัวชี้วัดผลงาน</p>
       <span class="status">ตัวชี้วัดผลงาน</span>
       </article>
-      </div>
-        
+
       <article class="card" onclick="openSOP()">
       <div class="card-heading">
       <div class="card-icon">📘</div>
@@ -366,7 +370,9 @@
       <p>คู่มือมาตรฐานและขั้นตอนการปฏิบัติงาน</p>
       <span class="status">Standard Operating Procedure</span>
       </article>
-      </section>
+     
+      </div>
+</section>
 
       <section id="kpi-page" class="container" style="display:none;">
       <button class="back-button" onclick="backToKnowledge()">
