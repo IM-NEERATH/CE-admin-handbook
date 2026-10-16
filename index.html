@@ -338,6 +338,31 @@
 
       empty.style.display = visible === 0 ? "block" : "none";
     });
+    function openKnowledge(id) {
+  document.getElementById("menu").style.display = "none";
+  document.getElementById("search").style.display = "none";
+  document.querySelector(".section-heading").style.display = "none";
+  document.querySelector(".hero").style.display = "none";
+  document.getElementById(id).style.display = "block";
+}
+
+function closeKnowledge() {
+  document.getElementById("knowledge-admin").style.display = "none";
+  document.getElementById("menu").style.display = "grid";
+  document.getElementById("search").style.display = "block";
+  document.querySelector(".section-heading").style.display = "flex";
+  document.querySelector(".hero").style.display = "block";
+}
+
+function openKPI() {
+  document.getElementById("knowledge-admin").style.display = "none";
+  document.getElementById("kpi-page").style.display = "block";
+}
+
+function backToKnowledge() {
+  document.getElementById("kpi-page").style.display = "none";
+  document.getElementById("knowledge-admin").style.display = "block";
+}
   </script>
 
 </body>
