@@ -184,31 +184,6 @@
       text-align: center;
       color: #64748b;
     }
-    
-    <section id="knowledge-admin" class="container" style="display:none;">
-      <button onclick="closeKnowledge()">← กลับหน้าหลัก</button>
-
-      <h2>Knowledge Admin CE</h2>
-      <p>เลือกหัวข้อความรู้ที่ต้องการศึกษา</p>
-
-      <div class="grid">
-      <article class="card" onclick="openKPI()">
-      <div class="card-heading">
-      <div class="card-icon">📊</div>
-      <h3>KPI</h3>
-      </div>
-      <p>คู่มือและข้อมูลตัวชี้วัดผลงาน</p>
-      <span class="status">ตัวชี้วัดผลงาน</span>
-      </article>
-      </div>
-      </section>
-
-      <section id="kpi-page" class="container" style="display:none;">
-      <button onclick="backToKnowledge()">← กลับไป Knowledge Admin CE</button>
-
-      <h2>KPI</h2>
-      <p>เนื้อหาเกี่ยวกับ KPI สำหรับ Admin CE</p>
-      </section>
 
     footer {
       margin-top: 36px;
@@ -312,7 +287,32 @@
     </p>
 
   </main>
+  
+      <section id="knowledge-admin" class="container" style="display:none;">
+      <button onclick="closeKnowledge()">← กลับหน้าหลัก</button>
 
+      <h2>Knowledge Admin CE</h2>
+      <p>เลือกหัวข้อความรู้ที่ต้องการศึกษา</p>
+
+      <div class="grid">
+      <article class="card" onclick="openKPI()">
+      <div class="card-heading">
+      <div class="card-icon">📊</div>
+      <h3>KPI</h3>
+      </div>
+      <p>คู่มือและข้อมูลตัวชี้วัดผลงาน</p>
+      <span class="status">ตัวชี้วัดผลงาน</span>
+      </article>
+      </div>
+      </section>
+
+      <section id="kpi-page" class="container" style="display:none;">
+      <button onclick="backToKnowledge()">← กลับไป Knowledge Admin CE</button>
+
+      <h2>KPI</h2>
+      <p>เนื้อหาเกี่ยวกับ KPI สำหรับ Admin CE</p>
+      </section>
+  
   <script>
     const search = document.getElementById("search");
     const cards = document.querySelectorAll(".card");
@@ -334,6 +334,32 @@
 
       empty.style.display = visible === 0 ? "block" : "none";
     });
+    function openKnowledge(id) {
+  document.getElementById("menu").style.display = "none";
+  document.getElementById("search").style.display = "none";
+  document.querySelector(".section-heading").style.display = "none";
+  document.querySelector(".hero").style.display = "none";
+  document.getElementById("empty").style.display = "none";
+
+  document.getElementById(id).style.display = "block";
+}
+    function closeKnowledge() {
+  document.getElementById("knowledge-admin").style.display = "none";
+  document.getElementById("kpi-page").style.display = "none";
+  document.getElementById("menu").style.display = "grid";
+  document.getElementById("search").style.display = "block";
+  document.querySelector(".section-heading").style.display = "flex";
+  document.querySelector(".hero").style.display = "block";
+}
+
+    function openKPI() {
+  document.getElementById("knowledge-admin").style.display = "none";
+  document.getElementById("kpi-page").style.display = "block";
+}
+    function backToKnowledge() {
+  document.getElementById("kpi-page").style.display = "none";
+  document.getElementById("knowledge-admin").style.display = "block";
+}
   </script>  
 
 <footer>
