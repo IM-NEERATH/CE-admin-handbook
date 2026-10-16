@@ -262,7 +262,7 @@
         <span class="status">ความรู้พื้นฐาน</span>
       </article>
       
-      <article class="card">
+      <article class="card" onclick="openKnowledge('Work Process')">
         <div class="card-heading">
         <div class="card-icon">📋</div>
         <h3>Work Process</h3>
@@ -271,7 +271,7 @@
         <span class="status">ขั้นตอนการทำงาน</span>
       </article>
       
-      <article class="card">
+      <article class="card" onclick="openKnowledge('FAQ & Templates')">
         <div class="card-heading">
         <div class="card-icon">💬</div> 
         <h3>FAQ & Templates</h3>
@@ -289,10 +289,10 @@
   </main>
   
       <section id="knowledge-admin" class="container" style="display:none;">
-      <button onclick="closeKnowledge()">← กลับหน้าหลัก</button>
+      <button onclick="closeKnowledge()">Back to Menu</button>
 
       <h2>Knowledge Admin CE</h2>
-      <p>เลือกหัวข้อความรู้ที่ต้องการศึกษา</p>
+      <p>เลือกหัวข้อความรู้ที่ต้องการค้นหา</p>
 
       <div class="grid">
       <article class="card" onclick="openKPI()">
@@ -307,7 +307,7 @@
       </section>
 
       <section id="kpi-page" class="container" style="display:none;">
-      <button onclick="backToKnowledge()">← กลับไป Knowledge Admin CE</button>
+      <button onclick="backToKnowledge()">←Back to Knowledge Admin CE</button>
 
       <h2>KPI</h2>
       <p>เนื้อหาเกี่ยวกับ KPI สำหรับ Admin CE</p>
@@ -363,7 +363,7 @@
   </script>  
 
 <footer>
-    CE Admin Knowledge · Version 1.0
+    CE Admin Knowledge · Version 1.0 · EDS CONTROL TOWER
   </footer>
 
 </body>
