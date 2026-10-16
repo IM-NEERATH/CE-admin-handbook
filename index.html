@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CE Admin Knowledge</title>
-
-  <style>
+  
+<style>
     * {
       box-sizing: border-box;
     }
@@ -15,7 +15,7 @@
       min-height: 100%;
       }
 
-  body {
+    body {
       margin: 0;
       min-height: 100vh;
       display: flex;
@@ -329,15 +329,15 @@
         </div>
         <p>คำถามที่พบบ่อยและตัวอย่างข้อความหรือเอกสาร</p>
         <span class="status">คำถามและแบบฟอร์ม</span>
-      </article>
+        </article>
 
-    </section>
+        </section>
 
     <p class="empty" id="empty">
       ไม่พบหมวดหมู่ที่ค้นหา ลองใช้คำอื่นอีกครั้ง
     </p>
 
-  </main>
+</main>
   
       <section id="knowledge-admin" class="container" style="display:none;">
       <button class="back-button" onclick="closeKnowledge()">
@@ -407,69 +407,70 @@
     const search = document.getElementById("search");
     const cards = document.querySelectorAll(".card");
     const empty = document.getElementById("empty");
-
+    
     search.addEventListener("input", function () {
       const keyword = search.value.toLowerCase().trim();
       let visible = 0;
 
-      cards.forEach(function (card) {
-        const matched = card.textContent
-          .toLowerCase()
-          .includes(keyword);
+    cards.forEach(function (card) {
+      const matched = card.textContent
+      .toLowerCase()
+      .includes(keyword);
 
-        card.style.display = matched ? "" : "none";
-
-        if (matched) visible++;
+      card.style.display = matched ? "" : "none";
+      if (matched) visible++;
       });
-
       empty.style.display = visible === 0 ? "block" : "none";
     });
     
     function openKnowledge(id) {
       const page = document.getElementById(id);
-
       if (!page) {
       alert("ยังไม่มีหน้าสำหรับเมนูนี้");
       return;
       }
-
       // ซ่อนหน้าแรกทั้งหน้า เพื่อไม่ให้กินพื้นที่
-      document.querySelector("main").style.display = "none";
-
-      // ซ่อนหน้าความรู้และหน้า KPI ก่อน
+      document.querySelector("main").style.display = "none";// ซ่อนหน้าความรู้และหน้า KPI ก่อน
       document.getElementById("knowledge-admin").style.display = "none";
-      document.getElementById("kpi-page").style.display = "none";
-
-      // แสดงหน้าที่เลือก
-      page.style.display = "block";
-
-      // เลื่อนกลับไปด้านบนของหน้า
+      document.getElementById("kpi-page").style.display = "none";// แสดงหน้าที่เลือก
+      page.style.display = "block";// เลื่อนกลับไปด้านบนของหน้า
       window.scrollTo(0, 0);
     }
    
     function closeKnowledge() {
       document.getElementById("knowledge-admin").style.display = "none";
-      document.getElementById("kpi-page").style.display = "none";
-
-      // แสดงหน้าแรกกลับมา
+      document.getElementById("kpi-page").style.display = "none";// แสดงหน้าแรกกลับมา
       document.querySelector("main").style.display = "block";
-
       window.scrollTo(0, 0);
+      document.getElementById("sop-page").style.display = "none";
     }
 
     function openKPI() {
       document.getElementById("knowledge-admin").style.display = "none";
       document.getElementById("kpi-page").style.display = "block";
-
+      window.scrollTo(0, 0);
+    }
+    
+    function openSOP() {
+      document.getElementById("knowledge-admin").style.display = "none";
+      document.getElementById("kpi-page").style.display = "none";
+      document.getElementById("sop-page").style.display = "block";
       window.scrollTo(0, 0);
     }
 
     function backToKnowledge() {
       document.getElementById("kpi-page").style.display = "none";
       document.getElementById("knowledge-admin").style.display = "block";
-
       window.scrollTo(0, 0);
     }
+
+    function backToKnowledge() {
+      document.getElementById("kpi-page").style.display = "none";
+      document.getElementById("sop-page").style.display = "none";
+      document.getElementById("knowledge-admin").style.display = "block";
+      window.scrollTo(0, 0);
+    }
+    
     </script>  
 
 <footer>
